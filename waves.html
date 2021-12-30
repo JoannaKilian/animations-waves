@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wave</title>
+    <style>
+        
+        div.sandbox {
+            overflow: hidden;
+            height: 95vh;
+            width: 95vw;
+            position: relative;
+            background-color:rgb(63, 63, 63);
+            text-align: center;
+            border: #fff solid 10px;
+        }
+
+        div.sandbox span {
+            color: rgba(255, 255, 255, 0.308);
+            font-size: 7vw;
+            text-transform: uppercase;
+            line-height: 70vh;
+        }
+        
+        div.clouds, div.clouds::before, div.clouds::after {
+            width: 250vw;
+            height: 250vw;
+            position: absolute;
+            top: 85%;
+            left: -75%;
+            transform: translate(-50%, 0%);
+            border-radius: 45%;
+            transform: rotate(0deg);
+        }
+        div.clouds {
+            background-color: rgba(53, 66, 185, 0.7);
+            animation: clouds 23s linear infinite both ;
+        }
+
+        div.clouds::before {
+            top: 0%;
+            left: -0%;
+            content: "";
+            background-color: rgba(21, 195, 248, 0.5);
+            animation: clouds 29s linear infinite both ;
+        }
+
+        div.clouds::after {
+            top: 0%;
+            left: 0%;
+            content: "";
+            background-color: rgba(6, 124, 160, 0.5);
+            animation: clouds 46s linear infinite both ;
+        }
+
+        @keyframes clouds {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="sandbox"><span>relax and rest</span> 
+        <div class="clouds" ></div>
+    </div>
+</body>
+</html>
